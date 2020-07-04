@@ -9,14 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
 
-    <!-- Please do not use build tool for your assignment.
-     Follow the steps mentioned in PDF to setup project.
-
-     Build tool is used only as an example for reference and for quick demonstration.
-      -->
-
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
