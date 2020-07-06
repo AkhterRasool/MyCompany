@@ -12,16 +12,14 @@ public class EmpSalaryByERank {
     public void printDetails() {
         ResultSet resultSet = QueryExecutionUtil.get(SQL);
         try {
-            boolean recordsExist = false;
             while (resultSet.next()) {
-                recordsExist = true;
                 String eRank = resultSet.getString("erank");
                 String avgSalary = resultSet.getString("Average_Salary");
                 System.out.println("Erank: " + eRank);
                 System.out.println("Average Salary: " + avgSalary);
                 System.out.println("==============================");
             }
-            if (!recordsExist) {
+            if (!resultSet.absolute(1)) {
                 System.out.println("No records found.");
             }
         } catch (SQLException sqlException) {

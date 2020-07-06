@@ -17,9 +17,7 @@ public class EmpSalGreaterThanMarketingAvgSal {
         try {
             ResultSet resultSet = QueryExecutionUtil.get(SQL);
             boolean titlePrinted = false;
-            boolean recordsExist = false;
             while (resultSet.next()) {
-                recordsExist = true;
                 if (!titlePrinted) {
                     System.out.println("The following employees have salary greater than average salary of department '" + DEPARTMENT + "':");
                     titlePrinted = true;
@@ -29,7 +27,7 @@ public class EmpSalGreaterThanMarketingAvgSal {
                 System.out.println(String.format("%s [ID # %s]", employeeName, empId));
             }
 
-            if (!recordsExist) {
+            if (!resultSet.absolute(1)) {
                 System.out.println("No records found.");
             }
         } catch (SQLException e) {

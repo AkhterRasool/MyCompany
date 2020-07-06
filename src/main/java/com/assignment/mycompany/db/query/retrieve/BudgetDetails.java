@@ -17,9 +17,9 @@ public class BudgetDetails {
         ResultSet resultSet = QueryExecutionUtil.get(BUDGET_SQL);
         try {
             while (resultSet.next()) {
-                String minBudget = resultSet.getString("MINIMUM_BUDGET");
-                String maxBudget = resultSet.getString("MAXIMUM_BUDGET");
-                String avgBudget = resultSet.getString("AVERAGE_BUDGET");
+                double minBudget = resultSet.getDouble("MINIMUM_BUDGET");
+                double maxBudget = resultSet.getDouble("MAXIMUM_BUDGET");
+                double avgBudget = resultSet.getDouble("AVERAGE_BUDGET");
                 System.out.println("Start Year: " + START_YEAR);
                 System.out.println("Minimum Budget: " + minBudget);
                 System.out.println("Maximum Budget: " + maxBudget);

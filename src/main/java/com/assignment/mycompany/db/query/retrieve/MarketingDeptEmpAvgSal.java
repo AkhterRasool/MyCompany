@@ -17,15 +17,13 @@ public class MarketingDeptEmpAvgSal {
     public void printDetails() {
         ResultSet resultSet = QueryExecutionUtil.get(SQL);
         try {
-            boolean recordsExist = false;
             if (resultSet.next()) {
-                recordsExist = true;
-                String averageSalary = resultSet.getString("AVERAGE_SALARY");
+                double averageSalary = resultSet.getDouble("AVERAGE_SALARY");
                 System.out.println("Department: " + DEPARTMENT_NAME);
                 System.out.println("Average Salary: " + averageSalary);
             }
 
-            if (!recordsExist) {
+            if (!resultSet.absolute(1)) {
                 System.out.println("No records found.");
             }
         } catch (SQLException throwables) {
