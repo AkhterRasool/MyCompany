@@ -1,6 +1,7 @@
 package com.assignment.mycompany.db.query.retrieve;
 
 import com.assignment.mycompany.db.util.QueryExecutionUtil;
+import com.assignment.mycompany.menu.util.MenuOptionUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,11 +10,12 @@ import java.util.Map;
 
 public class ExistingDepartments {
     private static final String SQL = "SELECT Did, name from department;";
+    private static final String DEPARTMENT_RECORD_COUNT = "select Did from department limit 1";
 
     public void printExistingDepartments() {
         System.out.println();
         Map<Integer, String> existingDepartments = getExistingDepartments();
-        if (existingDepartments.isEmpty()) {
+        if (!departmentsExist()) {
             System.out.println("No departments exist. Please add one.");
         } else {
             System.out.println("Existing departments:");
@@ -32,9 +34,26 @@ public class ExistingDepartments {
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            departments = new HashMap<>();
         }
 
         return departments;
+    }
+
+    public static boolean departmentsExist() {
+        ResultSet resultSet = QueryExecutionUtil.get(DEPARTMENT_RECORD_COUNT);
+        try {
+            return resultSet.next();
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        return false;
+    }
+
+    public int promptDeptId() {
+        ExistingDepartments existingDepartments = new ExistingDepartments();
+        existingDepartments.printExistingDepartments();
+        return departmentsExist() ?
+                MenuOptionUtil.getOptionUntilValid("Enter department id: ", existingDepartments.getExistingDepartments().keySet())
+                : -1;
     }
 }

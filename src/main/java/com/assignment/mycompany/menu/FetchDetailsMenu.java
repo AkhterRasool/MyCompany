@@ -1,6 +1,10 @@
 package com.assignment.mycompany.menu;
 
-import com.assignment.mycompany.db.query.retrieve.*;
+import com.assignment.mycompany.db.query.retrieve.AllProjects;
+import com.assignment.mycompany.db.query.retrieve.BudgetDetails;
+import com.assignment.mycompany.db.query.retrieve.EmpSalGreaterThanMarketingAvgSal;
+import com.assignment.mycompany.db.query.retrieve.EmpSalaryByERank;
+import com.assignment.mycompany.db.query.retrieve.MarketingDeptEmpAvgSal;
 import com.assignment.mycompany.menu.util.MenuOptionUtil;
 
 import java.util.HashMap;
