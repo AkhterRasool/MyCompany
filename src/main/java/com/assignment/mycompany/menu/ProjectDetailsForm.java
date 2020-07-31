@@ -8,7 +8,7 @@ import static com.assignment.mycompany.menu.util.MenuOptionUtil.getValidInt;
 import static com.assignment.mycompany.menu.util.MenuOptionUtil.getValidText;
 
 
-public class ProjectDetailsForm extends FormDetails {
+public class ProjectDetailsForm extends MenuItemForm {
 
     @Override
     void prompt() {

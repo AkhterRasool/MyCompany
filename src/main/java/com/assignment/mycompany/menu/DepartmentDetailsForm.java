@@ -4,7 +4,7 @@ import com.assignment.mycompany.db.query.insert.InsertDepartment;
 
 import static com.assignment.mycompany.menu.util.MenuOptionUtil.getValidText;
 
-public class DepartmentDetailsForm extends FormDetails {
+public class DepartmentDetailsForm extends MenuItemForm {
 
     @Override
     void prompt() {

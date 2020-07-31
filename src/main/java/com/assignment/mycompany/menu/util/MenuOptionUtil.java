@@ -1,6 +1,6 @@
 package com.assignment.mycompany.menu.util;
 
-import com.assignment.mycompany.menu.FormDetails;
+import com.assignment.mycompany.menu.MenuItemForm;
 
 import java.util.Collection;
 import java.util.InputMismatchException;
@@ -20,7 +20,7 @@ public class MenuOptionUtil {
         System.out.print("Enter option number:\t");
     }
 
-    public static void display(Map<Integer, FormDetails> optionsMap) {
+    public static void display(Map<Integer, MenuItemForm> optionsMap) {
         System.out.println();
         System.out.println("Please select an option:");
         optionsMap.forEach((k, v) -> {
@@ -41,7 +41,7 @@ public class MenuOptionUtil {
         }
     }
 
-    private static void display(String message) {
+    public static void display(String message) {
         System.out.print(message + "\t");
     }
 

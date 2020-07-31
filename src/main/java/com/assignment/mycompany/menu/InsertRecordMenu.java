@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class InsertRecordMenu {
     
-    private static final Map<Integer, FormDetails> optionMap;
+    private static final Map<Integer, MenuItemForm> optionMap;
     
     static {
         optionMap = new HashMap<>();

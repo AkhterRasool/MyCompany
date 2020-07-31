@@ -16,7 +16,6 @@ public class MainMenu {
     }
 
     public void display() {
-        System.out.println("Welcome to MyCompany!");
         while (true) {
             MenuOptionUtil.displayOptions(options);
             int option = MenuOptionUtil.getUserOption(options);

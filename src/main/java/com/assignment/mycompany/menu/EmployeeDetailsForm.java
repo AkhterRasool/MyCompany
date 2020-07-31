@@ -10,7 +10,7 @@ import static com.assignment.mycompany.menu.util.MenuOptionUtil.getValidDouble;
 import static com.assignment.mycompany.menu.util.MenuOptionUtil.getValidText;
 
 
-public class EmployeeDetailsForm extends FormDetails {
+public class EmployeeDetailsForm extends MenuItemForm {
 
     @Override
     public String getDescription() {
